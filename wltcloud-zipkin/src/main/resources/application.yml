@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: wltcloud-zipkin
+
+server:
+  port: 9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#开启服务链路追踪的配置
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

@@ -10,10 +10,10 @@
         <relativePath>../wltcloud-dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>wltcloud-zuul</artifactId>
+    <artifactId>wltcloud-zipkin</artifactId>
     <packaging>jar</packaging>
 
-    <name>wltcloud-zuul</name>
+    <name>wltcloud-zipkin</name>
     <url>https://github.com/wulitian/wltcloud</url>
     <inceptionYear>2019-Now</inceptionYear>
 
@@ -37,22 +37,28 @@
             <scope>test</scope>
         </dependency>
         <!-- Spring Boot End -->
-
+        <!--zipkin的三个包服务链路追终-->
         <!-- Spring Cloud Begin -->
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin</artifactId>
+            <version>${zipkin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-server</artifactId>
+            <version>${zipkin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-autoconfigure-ui</artifactId>
+            <version>${zipkin.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-        </dependency>
         <!-- Spring Cloud End -->
-        <!--服务追踪-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
@@ -61,7 +67,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.wltcloud.zuul.ZuulApplication</mainClass>
+                    <mainClass>com.wltcloud.zipkin.ZipKinApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

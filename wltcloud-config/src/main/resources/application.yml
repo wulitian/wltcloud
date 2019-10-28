@@ -10,6 +10,8 @@ spring:
           search-paths: wltcloud-yml
           username: wulitian
           password: 100578Ss,
+  zipkin:
+    base-url: http://localhost:9411
 server:
   port: 8888
 
