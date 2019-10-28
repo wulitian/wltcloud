@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: wltcloud-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/wulitian/wltcloud
+          search-paths: wltcloud-service-admin/src/main/resources
+          username: wulitian
+          password: 100578Ss,
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
