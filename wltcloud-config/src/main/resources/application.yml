@@ -7,10 +7,9 @@ spring:
       server:
         git:
           uri: https://github.com/wulitian/wltcloud
-          search-paths: wltcloud-service-admin/src/main/resources
+          search-paths: wltcloud-yml
           username: wulitian
           password: 100578Ss,
-
 server:
   port: 8888
 
@@ -18,3 +17,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  #spring.cloud.config.uri：配置服务中心的网址
+  #spring.cloud.config.name：配置文件名称的前缀
+  #spring.cloud.config.label：配置仓库的分支
+  #spring.cloud.config.profile：配置文件的环境标识
+  #dev：表示开发环境
+  #test：表示测试环境
+  #prod：表示生产环境
