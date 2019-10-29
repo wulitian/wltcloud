@@ -48,7 +48,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>wltcloud.alibaba.nacos.provider.NacosProviderApplication</mainClass>
+                    <mainClass>com.wltcloud.alibaba.nacos.provider.NacosProviderApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
