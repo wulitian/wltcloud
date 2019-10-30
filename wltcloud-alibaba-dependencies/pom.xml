@@ -25,12 +25,27 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Spring Settings -->
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
-        <spring-cloud-alibaba.version>0.9.0.RELEASE</spring-cloud-alibaba.version>
+        <alibaba.cloud.version>0.9.0.RELEASE</alibaba.cloud.version>
     </properties>
-
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -38,16 +53,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>Central</name>
+            <url>http://39.96.179.139:8081/nexus/content/groups/public/</url>
+        </repository>
+    </distributionManagement>
     <build>
         <plugins>
             <!-- Compiler 插件, 设定 JDK 版本 -->
@@ -112,6 +127,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.2</version>
             </plugin>
         </plugins>
 
@@ -229,8 +245,18 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <!--gitee 私服-->
+        <repository>
+            <id>gitee.wang</id>
+            <name>gitee.wang</name>
+            <url>http://nexus.gitee.wang/repository/maven-releases/</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Central</name>
+            <url>http://39.96.179.139:8081/nexus/content/groups/public/</url>
+        </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
             <id>aliyun-repos</id>
