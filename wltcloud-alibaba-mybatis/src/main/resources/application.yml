@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: wltcloud-alibaba-mybatis
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/wltcloud-mybatis?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: root
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      # MySQL 8.x: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+server:
+  port: 8888
+
+mybatis:
+  #type-aliases-package实体类的存放路径，如：
+  type-aliases-package: com.wltcloud.mybatis.entity
+  mapper-locations: classpath:mapper/*.xml
