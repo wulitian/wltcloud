@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/wltcloud-mybatis?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=UTC
+  application:
+    name: wltcloud-alibaba-mybatis-plus
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/com/wltcloud/*/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.wltcloud.mybatis.plus.entity
+server:
+  port: 8889
