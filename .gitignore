@@ -4,7 +4,7 @@ target/
 *.ear
 *.tar
 *.tar.gz
-
+*.data/model
 # eclipse ignore
 .settings/
 .project
