@@ -10,7 +10,6 @@
 
     <properties>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-        <hutool.version>5.0.5</hutool.version>
     </properties>
 
     <licenses>
@@ -28,12 +27,6 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <!--集成工具类hutool-->
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

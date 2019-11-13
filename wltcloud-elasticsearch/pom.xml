@@ -10,14 +10,11 @@
         <relativePath>../wltcloud-alibaba-dependencies/pom.xml</relativePath>
     </parent>
 
-    <artifactId>wltcloud-hanlp</artifactId>
+    <artifactId>wltcloud-elasticsearch</artifactId>
     <packaging>jar</packaging>
-    <name>wltcloud-hanlp</name>
+    <name>wltcloud-elasticsearch</name>
     <url>https://github.com/wulitian/wltcloud</url>
     <inceptionYear>2019-Now</inceptionYear>
-    <properties>
-        <skipTests>true</skipTests>
-    </properties>
     <dependencies>
         <!-- Spring Boot Begin -->
         <dependency>
@@ -34,17 +31,22 @@
             <scope>test</scope>
         </dependency>
         <!-- Spring Boot End -->
+        <!--引用工具类-->
         <dependency>
             <groupId>com.wltcloud</groupId>
             <artifactId>wltcloud-common</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-        <!--引用工具类-->
-        <!--整合hanlp-->
+        <!--集成elasticsearch以rest方式-->
         <dependency>
-            <groupId>com.hankcs</groupId>
-            <artifactId>hanlp</artifactId>
-            <version>portable-1.7.5</version>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>6.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>6.4.0</version>
         </dependency>
     </dependencies>
 
@@ -54,7 +56,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.wltcloud.hanlp.HanlpApplication</mainClass>
+                    <mainClass>com.wltcloud.elasticsearch.ElasticsearchApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

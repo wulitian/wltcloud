@@ -1,6 +1,5 @@
 spring:
   application:
     name: wltcloud-hanlp
-
 server:
-  port: 2222
+  port: 2221
