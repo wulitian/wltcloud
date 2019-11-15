@@ -49,7 +49,7 @@ public class RestHighTest {
 
     @Test
     public void search() {
-        SearchRequest searchRequest = new SearchRequest().indices("content").types("doc");
+        SearchRequest searchRequest = new SearchRequest().indices("wltcloud_sfal").types("sfal");
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
         MatchPhrasePrefixQueryBuilder mppqb = QueryBuilders.matchPhrasePrefixQuery("name", "测试");
         sourceBuilder.query(mppqb);
